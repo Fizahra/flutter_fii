@@ -3,16 +3,18 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter_fii/page/account_page.dart';
+import 'package:flutter_fii/widgets/custom_primary_button.dart';
 import 'package:matcher/matcher.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class CounterPage extends StatefulWidget {
+  const CounterPage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<CounterPage> createState() => _CounterPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _CounterPageState extends State<CounterPage> {
   int _count = 0;
 
   void _increment() {
@@ -47,7 +49,9 @@ class _HomePageState extends State<HomePage> {
               height: 10,
             ),
             const Text(
-              'Kamu telah menekan tombol sebanyak :',
+              'Tekan tombol dibawah untuk mengubah value',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
             ),
             const SizedBox(
               height: 20,
@@ -78,7 +82,20 @@ class _HomePageState extends State<HomePage> {
                   child: const Icon(Icons.add),
                 ),
               ],
-            )
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            CustomPrimaryButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AccountPage(number: _count),
+                    ),
+                  );
+                },
+                text: 'Menuju ke page selanjutnya'),
           ],
         ),
       ),
