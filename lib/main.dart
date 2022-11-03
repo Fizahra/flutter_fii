@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fii/page/counter_page.dart';
+import 'package:flutter_fii/page/main_page.dart';
 
 void main() {
   runApp(App());
@@ -12,7 +13,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: CounterPage(),
+      home: MainPage(),
     );
   }
 }
