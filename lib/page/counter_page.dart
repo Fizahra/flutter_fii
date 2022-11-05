@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter_fii/page/account_page.dart';
+import 'package:flutter_fii/page/resultcounter_page.dart';
 import 'package:flutter_fii/widgets/custom_primary_button.dart';
 import 'package:matcher/matcher.dart';
 
@@ -91,7 +91,7 @@ class _CounterPageState extends State<CounterPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => AccountPage(number: _count),
+                      builder: (context) => ResultCounterPage(number: _count),
                     ),
                   );
                 },
